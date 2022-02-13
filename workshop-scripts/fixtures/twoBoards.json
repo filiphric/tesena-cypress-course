@@ -1,0 +1,41 @@
+{
+  "boards": [
+    {
+      "name": "Nakúpiť",
+      "user": 0,
+      "id": 123456789,
+      "starred": false,
+      "created": "2022-01-23"
+    }, 
+    {
+      "name": "Pracovné veci",
+      "user": 0,
+      "id": 987654321,
+      "starred": false,
+      "created": "2022-01-23"
+    }
+  ],
+  "cards": [
+    {
+      "order": 0,
+      "boardId": 987654321,
+      "listId": 67326382115,
+      "name": "Vytvoriť novú kapitolu",
+      "id": 56149928812,
+      "created": "2022-01-29",
+      "deadline": "2022-02-01",
+      "description": "",
+      "completed": false
+    }
+  ],
+  "lists": [
+    {
+      "boardId": 987654321,
+      "name": "Urobiť",
+      "order": 0,
+      "id": 67326382115,
+      "created": "2022-01-29"
+    }
+  ],
+  "users": []
+}
