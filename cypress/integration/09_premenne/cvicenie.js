@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-// #1: v beforeEach si vytvor cez API nový board a prirať mu alias
+// #1: v beforeEach si vytvor cez API nový board a priraď mu alias
 beforeEach( function() {
 
 }) 
