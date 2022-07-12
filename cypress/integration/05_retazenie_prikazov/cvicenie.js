@@ -14,9 +14,7 @@ it('overenie textov kariet', () => {
   cy.contains('[data-cy=card]', 'Feb 14 2022')
     .should('contain.text', 'Bread')
 
-  cy.get('[data-cy=list]')
-    .eq(1)
-    .contains('[data-cy=card]', 'Feb 14 2022')
+  cy.contains('[data-cy=card]', 'Feb 14 2022')
     .should('contain.text', 'Shampoo')
 
 })
@@ -32,6 +30,7 @@ it('overenie textu karty', () => {
   cy.visit('/board/123456789')
 
   cy.get('[data-cy=card-text]')
+    .eq(1)
     .should('contain.text', 'Bread')
 
 })
@@ -45,7 +44,7 @@ it('na stránke je 5 kariet', () => {
 
   cy.visit('/board/123456789')
 
-  cy.get('[data-cy=card-text]', { timeout: 7000 })
+  cy.get('[data-cy=card-text]')
     .should('have.length', 5)
   
 });
@@ -53,14 +52,19 @@ it('na stránke je 5 kariet', () => {
 // #4: reťaz v tomto príkaze je zbytočne dlhá. navyše spôsobuje, že test je nestabilný
 // pomocou konzoly zdiagnostikuj, čo nám vracajú jednotlivé príkazy
 // a odstráň z testu príkazy, ktoré nie sú v teste potrebné
-it.only('pridlhá reťaz príkazov', () => {
+it('pridlhá reťaz príkazov', () => {
 
   // 😈 zákerný kód
   cardsLoadRandomly(3000)
 
   cy.visit('/board/123456789')
 
-  cy.contains('[data-cy=card]', 'Feb 14 2022')
+  cy.get('[data-cy=list]')
+    .first()
+    .find('[data-cy=card-list]')
+    .contains('[data-cy=card]', 'Feb 14 2022')
+    .find('[data-cy=card-text]')
+    .eq(0)
     .should('contain.text', 'Bread')
   
 });
